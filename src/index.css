@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+}
+
+/* Custom Pirate & Handwriting font utilities with robust system fallbacks */
+.font-pirate {
+  font-family: 'Pirata One', 'Cinzel Decorative', 'Georgia', cursive, serif;
+}
+
+/* Clear, recognizable uppercase print font for early childhood education */
+.font-letter-basic {
+  font-family: 'Open Sans', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.font-handwriting {
+  font-family: 'Schoolbell', 'Patrick Hand', 'Comic Sans MS', 'Chalkboard SE', cursive, sans-serif;
+}
+
+.font-calligraphy {
+  font-family: 'Patrick Hand', 'Schoolbell', 'Comic Sans MS', 'Chalkboard SE', cursive, sans-serif;
+}
+
+.font-kids {
+  font-family: 'Fredoka', 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+.font-title {
+  font-family: 'Cinzel Decorative', 'Pirata One', 'Times New Roman', serif;
+}
+
+/* Montessori / Pirate handwriting guidelines */
+.handwriting-renglon {
+  position: relative;
+  width: 100%;
+  border-top: 3px solid #795548;
+  border-bottom: 3px solid #795548;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+  min-height: 52px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+  padding: 4px 8px;
+}
+
+.handwriting-renglon::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  border-top: 2px dashed #BCAAA4;
+  z-index: 1;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.handwriting-renglon > * {
+  z-index: 2;
+}
+
+/* Dotted tracing text effect */
+.dotted-trace {
+  color: #B0BEC5;
+  letter-spacing: 0.15em;
+  font-family: 'Schoolbell', 'Patrick Hand', 'Comic Sans MS', 'Chalkboard SE', cursive;
+  user-select: none;
+}
+
+/* Screen A4 sheet simulation preview */
+.a4-preview-page {
+  background: white;
+  box-shadow: 0 4px 20px -2px rgba(45, 27, 17, 0.15);
+}
+
+/* Print Specific Rules for A4 Cuadernillo */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm 12mm;
+  }
+
+  html, body {
+    background-color: #FFFFFF !important;
+    color: #2D1B11 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .print-page {
+    page-break-after: always !important;
+    break-after: page !important;
+    min-height: 270mm;
+    box-sizing: border-box;
+    padding: 8mm 10mm;
+    margin-bottom: 0 !important;
+    border: 5px double #8D6E63 !important;
+    background-color: #FFFFFF !important;
+  }
+
+  .print-avoid-break {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    margin-bottom: 12px !important;
+  }
+
+  .print-page-break-before {
+    page-break-before: always !important;
+    break-before: page !important;
+  }
+}

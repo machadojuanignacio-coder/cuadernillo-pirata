@@ -1,0 +1,6 @@
+{
+  "name": "El Tesoro de las Letras - Cuadernillo Pirata",
+  "description": "Cuadernillo interactivo y generador imprimible A4 de caligrafía y lectoescritura pirata con trazo digital, abecedario personalizable y diploma.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
